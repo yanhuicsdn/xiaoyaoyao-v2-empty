@@ -4,76 +4,79 @@
 
 @layer base {
   :root {
-    /* 小药药企业内部Skill分享平台 — 浅色主题 (green-emerald brand) */
-    --background: 210 20% 98%;
-    --foreground: 220 26% 14%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 26% 14%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 26% 14%;
-    /* Emerald green primary (#10B981) */
-    --primary: 160 84% 39%;
-    --primary-foreground: 0 0% 100%;
+    /* 小药药 SkillHub — 中药铺墨绿国风主题 */
+    --background: 40 33% 94%;         /* #FAF6E8 宣纸色 */
+    --foreground: 140 27% 22%;        /* #2D4A2D 深绿文字 */
+    --card: 60 100% 99%;              /* #FFFEF7 卡片白 */
+    --card-foreground: 140 27% 22%;
+    --popover: 60 100% 99%;
+    --popover-foreground: 140 27% 22%;
+    /* 墨绿主色 #2D5F3F */
+    --primary: 150 43% 32%;
+    --primary-foreground: 60 100% 99%;
     /* Surface tones */
-    --secondary: 210 30% 96%;
-    --secondary-foreground: 220 26% 14%;
-    --muted: 210 25% 95%;
-    --muted-foreground: 215 14% 46%;
-    /* Teal accent (#14B8A6) */
-    --accent: 174 73% 46%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 40 30% 90%;          /* 米黄辅助 */
+    --secondary-foreground: 140 27% 22%;
+    --muted: 40 25% 88%;
+    --muted-foreground: 140 20% 40%;
+    /* 苔绿点缀 #8FBC8F */
+    --accent: 120 32% 62%;
+    --accent-foreground: 140 27% 22%;
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 160 84% 39%;
+    --border: 40 20% 85%;
+    --input: 40 20% 85%;
+    --ring: 150 43% 32%;
     --radius: 0.75rem;
 
     /* Extended palette */
-    --surface-glass: 210 30% 97%;
-    --glow-primary: 160 84% 39%;
-    --glow-accent: 174 73% 46%;
-    --success: 160 60% 45%;
+    --surface-glass: 40 30% 92%;
+    --glow-primary: 150 43% 32%;
+    --glow-accent: 120 32% 62%;
+    --success: 150 40% 45%;
     --warning: 38 92% 58%;
 
     /* Brand */
-    --brand-start: #10B981;
-    --brand-end: #14B8A6;
-    --brand-gradient: linear-gradient(135deg, #10B981 0%, #14B8A6 100%);
+    --brand-start: #2D5F3F;           /* 墨绿 */
+    --brand-end: #3D7A4D;             /* 深青绿 */
+    --brand-gradient: linear-gradient(135deg, #2D5F3F 0%, #3D7A4D 50%, #8FBC8F 100%);
 
     /* Text semantic */
-    --text-secondary: 215 19% 35%;
-    --text-muted: 215 14% 46%;
-    --text-placeholder: 213 12% 63%;
+    --text-secondary: 140 20% 35%;
+    --text-muted: 140 15% 45%;
+    --text-placeholder: 140 10% 60%;
 
     /* Border semantic */
-    --border-card: 220 26% 94%;
+    --border-card: 40 15% 80%;
   }
 
   .dark {
-    /* Dark theme (preserved, not default) */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 96%;
-    --card: 222 40% 9%;
-    --card-foreground: 210 40% 96%;
-    --popover: 222 40% 9%;
-    --popover-foreground: 210 40% 96%;
-    --primary: 160 84% 44%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 222 30% 13%;
-    --secondary-foreground: 210 30% 85%;
-    --muted: 222 25% 15%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 174 73% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Dark theme — 墨绿夜色 */
+    --background: 140 30% 12%;
+    --foreground: 40 30% 90%;
+    --card: 140 25% 16%;
+    --card-foreground: 40 30% 90%;
+    --popover: 140 25% 16%;
+    --popover-foreground: 40 30% 90%;
+    --primary: 150 43% 38%;
+    --primary-foreground: 140 30% 12%;
+    --secondary: 140 20% 20%;
+    --secondary-foreground: 40 25% 80%;
+    --muted: 140 15% 22%;
+    --muted-foreground: 40 20% 55%;
+    --accent: 120 32% 50%;
+    --accent-foreground: 140 30% 12%;
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 222 20% 18%;
-    --input: 222 20% 18%;
-    --ring: 160 84% 44%;
-    --surface-glass: 222 35% 11%;
-    --glow-primary: 160 84% 44%;
-    --glow-accent: 174 73% 50%;
+    --border: 140 15% 25%;
+    --input: 140 15% 25%;
+    --ring: 150 43% 38%;
+    --surface-glass: 140 25% 18%;
+    --glow-primary: 150 43% 38%;
+    --glow-accent: 120 32% 50%;
+    --brand-start: #3D7A4D;
+    --brand-end: #8FBC8F;
+    --brand-gradient: linear-gradient(135deg, #3D7A4D 0%, #8FBC8F 100%);
   }
 }
 
@@ -323,9 +326,9 @@
   padding: 4px 10px;
   font-size: 12px;
   font-weight: 500;
-  color: #0369a1;
-  background: #e0f2fe;
-  border: 1px solid #7dd3fc;
+  color: #2D5F3F;
+  background: #F5E6C8;
+  border: 1px solid #8FBC8F;
   border-radius: 9999px;
 }
 
@@ -380,8 +383,8 @@
 
 /* ─── Tab active ─── */
 .tab-active {
-  border-bottom: 2px solid #3b82f6;
-  color: #1d4ed8;
+  border-bottom: 2px solid #2D5F3F;
+  color: #2D5F3F;
 }
 
 /* ─── Code block ─── */
@@ -459,7 +462,7 @@
 
 .upload-zone:hover {
   border-color: var(--brand-start);
-  background: rgba(106, 109, 255, 0.04);
+  background: rgba(45, 95, 63, 0.04);
 }
 
 .upload-zone .upload-zone-icon {
@@ -473,7 +476,7 @@
 
 /* ─── Feature icon shadow ─── */
 .feature-icon {
-  box-shadow: 0 14px 30px rgba(106, 109, 255, 0.45);
+  box-shadow: 0 14px 30px rgba(45, 95, 63, 0.45);
 }
 
 /* ─── Hero input placeholder ─── */

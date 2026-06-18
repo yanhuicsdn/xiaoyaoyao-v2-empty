@@ -73,7 +73,7 @@ export function Layout() {
       {/* Header */}
       <header className={getAppHeaderClassName(isHeaderElevated)} style={{ borderColor: 'hsl(var(--border))' }}>
         <Link to="/" className="text-xl font-semibold tracking-tight text-brand-gradient">
-          小药药Skill分享
+          小药药 Skill管理与分享
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-[15px] font-normal" style={{ color: 'hsl(var(--text-secondary))' }}>
@@ -140,7 +140,7 @@ export function Layout() {
                 <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-sm bg-brand-gradient">
                   药
                 </div>
-                <span className="text-lg font-bold text-brand-gradient">小药药Skill分享</span>
+                <span className="text-lg font-bold text-brand-gradient">小药药 Skill管理与分享</span>
               </div>
               <p className="text-sm max-w-xs" style={{ color: 'hsl(var(--text-secondary))' }}>
                 {t('layout.footerDescription')}

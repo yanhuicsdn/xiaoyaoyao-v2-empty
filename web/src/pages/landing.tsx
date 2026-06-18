@@ -92,7 +92,7 @@ export function LandingPage() {
       {/* Hero Section */}
       <main ref={heroView.ref} className={`relative z-10 flex flex-col items-center pt-16 pb-20 px-4 md:pt-24 scroll-fade-up${heroView.inView ? ' in-view' : ''}`}>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-brand-gradient mb-4">
-          SkillHub
+          小药药 Skill管理与分享
         </h1>
         <h2
           className="text-xl md:text-2xl font-semibold tracking-tight text-center mb-3"

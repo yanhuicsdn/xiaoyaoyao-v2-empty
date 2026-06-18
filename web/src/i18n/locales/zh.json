@@ -50,7 +50,7 @@
       "teams": "团队"
     },
     "whySkillHub": {
-      "title": "为什么选择 小药药Skill分享",
+      "title": "为什么选择 小药药 Skill管理与分享",
       "subtitle": "专为企业打造的私有化 Agent 技能管理平台"
     },
     "badge": "企业级技能注册中心",
@@ -92,7 +92,7 @@
     "ctaTitle": "准备好开始了吗？",
     "ctaDescription": "一条命令即可启动本地开发环境，体验完整的技能管理流程",
     "ctaButton": "立即体验",
-    "footerLicense": "© 2026 小药药企业内部Skill分享平台。Apache License 2.0。",
+    "footerLicense": "© 2026 小药药 Skill管理与分享。Apache License 2.0。",
     "footerDocs": "文档",
     "footerGithub": "GitHub",
     "footerCommunity": "社区",
@@ -111,9 +111,9 @@
         "command": "npm i -g @astron-team/skillhub"
       },
       "agent": {
-        "description": "发送提示词给你的 Agent，以设置小药药企业内部Skill分享平台 Registry",
-        "command": "阅读 https://www.example.com/registry/skill.md，并按照说明完成 小药药企业内部Skill分享平台 Skills Registry 的配置",
-        "commandTemplate": "阅读 {{url}}，并按照说明完成 小药药企业内部Skill分享平台 Skills Registry 的配置"
+        "description": "发送提示词给你的 Agent，以设置小药药 Skill管理与分享 Registry",
+        "command": "阅读 https://www.example.com/registry/skill.md，并按照说明完成 小药药 Skill管理与分享 Skills Registry 的配置",
+        "commandTemplate": "阅读 {{url}}，并按照说明完成 小药药 Skill管理与分享 Skills Registry 的配置"
       },
       "human": {
         "description": "使用CLI工具安装Skills",
@@ -122,7 +122,7 @@
       "steps": {
         "configureEnv": {
           "title": "1. 配置环境变量",
-          "description": "设置 ClawHub CLI 连接到 小药药企业内部Skill分享平台"
+          "description": "设置 ClawHub CLI 连接到 小药药 Skill管理与分享"
         },
         "installSkills": {
           "title": "2. 安装技能",
@@ -150,12 +150,12 @@
     "quickStart": {
       "title": "快速开始",
       "subtitle": "Quick Start",
-      "description": "只需几个简单步骤，即可开始使用 小药药企业内部Skill分享平台",
+      "description": "只需几个简单步骤，即可开始使用 小药药 Skill管理与分享",
       "tip": "💡 提示：访问技能详情页可获取带环境变量的一键复制安装命令",
       "steps": {
         "configureEnv": {
           "title": "1. 配置环境变量",
-          "description": "设置 ClawHub CLI 连接到 小药药企业内部Skill分享平台"
+          "description": "设置 ClawHub CLI 连接到 小药药 Skill管理与分享"
         },
         "installSkills": {
           "title": "2. 安装技能",
@@ -201,7 +201,7 @@
     "clear": "清空搜索"
   },
   "login": {
-    "title": "登录 小药药企业内部Skill分享平台",
+    "title": "登录 小药药 Skill管理与分享",
     "subtitle": "选择一个方式登录以继续",
     "tabPassword": "账号密码",
     "tabOAuth": "OAuth",
@@ -221,7 +221,7 @@
     "oauthHint": "使用 OAuth 登录时，认证完成后会自动返回当前站点。",
     "passwordCompatHint": "当前部署已启用账号密码兼容接入层。表单将路由到 {{name}}，而不是固定使用本地账号接口。",
     "enterpriseSsoTitle": "企业单点登录",
-    "enterpriseSsoHint": "当前部署已启用兼容接入层。若浏览器中已存在 {{name}} 会话，可直接尝试建立 小药药企业内部Skill分享平台 登录态。",
+    "enterpriseSsoHint": "当前部署已启用兼容接入层。若浏览器中已存在 {{name}} 会话，可直接尝试建立 小药药 Skill管理与分享 登录态。",
     "enterpriseSsoAutoHint": "当前部署已启用自动 {{name}} 探测。若未成功，你仍可继续使用现有登录方式。",
     "enterpriseSsoAction": "尝试 {{name}} 登录",
     "enterpriseSsoSubmitting": "正在尝试 {{name}} 登录...",
@@ -1320,11 +1320,11 @@
     "community": "社区",
     "privacy": "隐私政策",
     "terms": "服务条款",
-    "copyright": "© 2026 小药药企业内部Skill分享平台. 保留所有权利。"
+    "copyright": "© 2026 小药药 Skill管理与分享. 保留所有权利。"
   },
   "publish": {
     "title": "发布技能",
-    "subtitle": "上传技能包到 小药药企业内部Skill分享平台",
+    "subtitle": "上传技能包到 小药药 Skill管理与分享",
     "reviewNotice": {
       "title": "发布审核说明",
       "description": "技能包提交后需要经过管理员审核才能正式发布。"
