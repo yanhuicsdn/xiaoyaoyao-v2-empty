@@ -1,0 +1,482 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 小药药企业内部Skill分享平台 — 浅色主题 (green-emerald brand) */
+    --background: 210 20% 98%;
+    --foreground: 220 26% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+    /* Emerald green primary (#10B981) */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    /* Surface tones */
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 220 26% 14%;
+    --muted: 210 25% 95%;
+    --muted-foreground: 215 14% 46%;
+    /* Teal accent (#14B8A6) */
+    --accent: 174 73% 46%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 39%;
+    --radius: 0.75rem;
+
+    /* Extended palette */
+    --surface-glass: 210 30% 97%;
+    --glow-primary: 160 84% 39%;
+    --glow-accent: 174 73% 46%;
+    --success: 160 60% 45%;
+    --warning: 38 92% 58%;
+
+    /* Brand */
+    --brand-start: #10B981;
+    --brand-end: #14B8A6;
+    --brand-gradient: linear-gradient(135deg, #10B981 0%, #14B8A6 100%);
+
+    /* Text semantic */
+    --text-secondary: 215 19% 35%;
+    --text-muted: 215 14% 46%;
+    --text-placeholder: 213 12% 63%;
+
+    /* Border semantic */
+    --border-card: 220 26% 94%;
+  }
+
+  .dark {
+    /* Dark theme (preserved, not default) */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 40% 9%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 40% 9%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 160 84% 44%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 222 30% 13%;
+    --secondary-foreground: 210 30% 85%;
+    --muted: 222 25% 15%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 174 73% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 160 84% 44%;
+    --surface-glass: 222 35% 11%;
+    --glow-primary: 160 84% 44%;
+    --glow-accent: 174 73% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', 'IBM Plex Sans', system-ui, sans-serif;
+  }
+
+  code, pre, kbd {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* Hide browser-native password reveal button (conflicts with custom toggle) */
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear,
+  input[type="password"]::-webkit-credentials-auto-fill-button {
+    display: none;
+  }
+}
+
+/* ─── Dot-grid background texture ─── */
+.bg-dots {
+  background-image: radial-gradient(circle, hsl(var(--muted-foreground) / 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── Gradient glow orbs ─── */
+.glow-orb-primary {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--glow-primary) / 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-orb-accent {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--glow-accent) / 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Glass morphism ─── */
+.glass {
+  background: hsl(var(--surface-glass) / 0.7);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+.glass-strong {
+  background: hsl(var(--surface-glass) / 0.85);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid hsl(var(--border) / 0.6);
+}
+
+/* ─── Animations ─── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--muted-foreground) / 0.08) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+/* ─── Gradient text ─── */
+.text-gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-hero {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .text-gradient-hero {
+  background: linear-gradient(135deg, #8183FF, #C77EFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Card hover lift ─── */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px hsl(var(--primary) / 0.1),
+              0 8px 16px -8px hsl(0 0% 0% / 0.2);
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* ─── Focus ring ─── */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+/* ─── Brand gradient utilities ─── */
+.text-brand-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-brand-gradient {
+  background: var(--brand-gradient);
+}
+
+/* ─── Handle tag (namespace @ pill) ─── */
+.handle-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid #7dd3fc;
+  border-radius: 9999px;
+}
+
+/* ─── Status pills ─── */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  padding: 4px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  color: white;
+}
+
+.status-pill--published { background: #16a34a; }
+.status-pill--review { background: #ea580c; }
+.status-pill--archived { background: #6b7280; }
+.status-pill--rejected { background: #dc2626; }
+
+/* ─── Role pill ─── */
+.role-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--text-secondary));
+}
+
+/* ─── Soft badges ─── */
+.badge-soft {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-soft-green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-soft-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* ─── Tab active ─── */
+.tab-active {
+  border-bottom: 2px solid #3b82f6;
+  color: #1d4ed8;
+}
+
+/* ─── Code block ─── */
+.code-block {
+  background: #1A202C;
+  color: #e5e7eb;
+  border-radius: 12px;
+}
+
+/* ─── Markdown code highlighting ─── */
+.hljs {
+  display: block;
+  color: hsl(var(--foreground) / 0.92);
+  background: transparent;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: hsl(var(--muted-foreground) / 0.9);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-name,
+.hljs-section,
+.hljs-link {
+  color: hsl(var(--primary) / 0.95);
+  font-weight: 600;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: hsl(var(--accent) / 0.9);
+}
+
+.hljs-number,
+.hljs-meta,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-built_in,
+.hljs-params {
+  color: hsl(218 70% 45%);
+}
+
+.hljs-function,
+.hljs-title.function_,
+.hljs-title.class_ {
+  color: hsl(var(--foreground) / 0.95);
+  font-weight: 600;
+}
+
+.hljs-regexp,
+.hljs-subst,
+.hljs-doctag {
+  color: hsl(24 85% 52%);
+}
+
+.hljs-deletion {
+  color: hsl(var(--destructive) / 0.88);
+}
+
+/* ─── Upload zone ─── */
+.upload-zone {
+  border: 2px dashed hsl(var(--border));
+  background: hsl(var(--background));
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.upload-zone:hover {
+  border-color: var(--brand-start);
+  background: rgba(106, 109, 255, 0.04);
+}
+
+.upload-zone .upload-zone-icon {
+  color: hsl(var(--muted-foreground));
+  transition: color 0.2s ease;
+}
+
+.upload-zone:hover .upload-zone-icon {
+  color: var(--brand-start);
+}
+
+/* ─── Feature icon shadow ─── */
+.feature-icon {
+  box-shadow: 0 14px 30px rgba(106, 109, 255, 0.45);
+}
+
+/* ─── Hero input placeholder ─── */
+.hero-input::placeholder {
+  color: hsl(var(--text-placeholder));
+}

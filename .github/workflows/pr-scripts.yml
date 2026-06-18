@@ -1,0 +1,37 @@
+name: PR Scripts
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - '.env.release.example'
+      - '.env.release.draft'
+      - 'compose.release.yml'
+      - 'Makefile'
+      - '.github/workflows/pr-cli.yml'
+      - '.github/workflows/pr-e2e.yml'
+      - '.github/workflows/pr-tests.yml'
+      - '.github/workflows/security.yml'
+      - '.github/workflows/pr-scripts.yml'
+      - '**/*.py'
+
+permissions:
+  contents: read
+
+jobs:
+  scripts-tests:
+    name: Script Regression Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '21'
+      - run: bash scripts/tests/publish-cli-test.sh
+      - run: bash scripts/tests/runtime-secret-test.sh
+      - run: bash scripts/tests/validate-release-config-test.sh
+      - run: bash scripts/tests/dev-web-host-test.sh
+      - run: bash scripts/tests/workflow-security-test.sh
